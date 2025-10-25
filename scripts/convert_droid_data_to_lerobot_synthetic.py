@@ -82,6 +82,11 @@ def main(input_data_dir: str, push_to_hub: bool = False):
                 "shape": (8,),  # We will use joint *velocity* actions here (7D) + gripper position (1D)
                 "names": ["actions"],
             },
+            "task": {
+                "dtype": "string",
+                "names": ["task"],
+            },
+
         },
         image_writer_threads=10,
         image_writer_processes=5,
