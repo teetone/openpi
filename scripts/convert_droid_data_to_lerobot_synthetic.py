@@ -145,6 +145,8 @@ def main(input_data_dir: str, push_to_hub: bool = False):
             dataset.add_frame(
                 {
                     # Note: need to flip BGR --> RGB for loaded images
+                    # v2 is the right camera and using v2 for both is intentional 
+                    # because pi05 was trained with only one 3rd perspective camera
                     "exterior_image_1_left": resize_image(v2[idx], (320, 180)), # always use camera in left
                     "exterior_image_2_left": resize_image(v2[idx], (320, 180)),
                     "wrist_image_left": resize_image(v3[idx], (320, 180)),
